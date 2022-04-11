@@ -19,7 +19,7 @@ export class AppController{
   @Post()
   createReport(@Body(){source,amount}: {amount:number;source:string},@Param('type')type:string){
     const reportType = type === "income" ? ReportType.INCOME : ReportType.EXPENSE;
-   this.appService.CreateReport(reportType,{source,amount})
+   this.appService.createReport(reportType,{source,amount})
     
   }
   @HttpCode(204)
@@ -27,9 +27,6 @@ export class AppController{
   deleteReport(
     @Param('id') id:string,
   ){
-   const reportIndex= data.report.findIndex((report)=>report.id===id);
-   if(reportIndex===-1) return;
-   data.report.splice(reportIndex,1)
-  return;
+   this.appService.deleteReport(id)
   }
 }
