@@ -1,6 +1,8 @@
 import { Controller, Delete, Get, Param, Post, Put,Body, HttpCode,ParseUUIDPipe,ParseEnumPipe} from "@nestjs/common";
 import{data, ReportType} from "src/testdata/data"
-import { AppService } from "./app.service";
+import { CreateReportDto } from "src/dto/report.dto"
+import { AppService } from "./app.service"
+
 @Controller('/report/:type')
 export class AppController{
   constructor(private readonly appService:AppService){}
@@ -15,7 +17,7 @@ export class AppController{
     this.appService.getById(reportType,id)
   }
   @Post()
-  createReport(@Body(){source,amount}: {amount:number;source:string},@Param('type')type:string){
+  createReport(@Body(){source,amount}: CreateReportDto,@Param('type')type:string){
     const reportType = type === "income" ? ReportType.INCOME : ReportType.EXPENSE;
    this.appService.createReport(reportType,{source,amount}) 
   }
