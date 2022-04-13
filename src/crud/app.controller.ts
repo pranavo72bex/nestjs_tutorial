@@ -1,6 +1,6 @@
 import { Controller, Delete, Get, Param, Post, Put,Body, HttpCode,ParseUUIDPipe,ParseEnumPipe} from "@nestjs/common";
 import{data, ReportType} from "src/testdata/data"
-import { CreateReportDto } from "src/dto/report.dto"
+import { CreateReportDto } from "src/crud/dto/report.dto"
 import { AppService } from "./app.service"
 
 @Controller('/report/:type')
