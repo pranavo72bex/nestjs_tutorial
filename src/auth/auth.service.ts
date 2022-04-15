@@ -5,9 +5,9 @@ import { PrismaService } from "src/prisma/prisma.service";
 export class AuthService {
   constructor(private prisma: PrismaService) { }
   signUp() {
-    return "I am signed up"
+    return { msg: "I am signed up" }
   }
   signin() {
-    return "i am signed in"
+    return { msg: "i am signed in" }
   }
 }
