@@ -1,20 +1,19 @@
-import { Exclude,Expose } from "class-transformer";
 import { IsNotEmpty, IsNumber, IsPositive, IsString } from "class-validator"
 import { ReportType } from "src/testdata/data";
 
-export class CreateReportDto{
+export class CreateReportDto {
     @IsNumber()
     @IsPositive()
-    amount:number;
+    amount: number;
     @IsNotEmpty()
     @IsString()
-    source:string;
+    source: string;
 }
-export class ReportResponseDto{
-    id:string;
-    source:string;
-    amount:number;
-    created_at:Date;
-    updated_at:Date;
-    type:ReportType;
+export class ReportResponseDto {
+    id: string;
+    source: string;
+    amount: number;
+    created_at: Date;
+    updated_at: Date;
+    type: ReportType;
 }
