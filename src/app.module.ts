@@ -7,6 +7,13 @@ import { ConfigModule } from '@nestjs/config';
 import { CrudModule } from './crud/crud.module';
 
 @Module({
-  imports: [AuthModule, UserModule, CrudModule, BookmarkModule, PrismaModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [
+    AuthModule,
+    UserModule,
+    CrudModule,
+    BookmarkModule,
+    PrismaModule,
+    ConfigModule.forRoot({ isGlobal: true })
+  ]
 })
-export class AppModule { }
+export class AppModule {}
