@@ -5,6 +5,7 @@ import { BookmarkModule } from './bookmark/bookmark.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { CrudModule } from './crud/crud.module';
+import { MessagesModule } from './messages/messages.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { CrudModule } from './crud/crud.module';
     CrudModule,
     BookmarkModule,
     PrismaModule,
-    ConfigModule.forRoot({ isGlobal: true })
+    ConfigModule.forRoot({ isGlobal: true }),
+    MessagesModule
   ]
 })
 export class AppModule {}
