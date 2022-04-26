@@ -15,9 +15,9 @@ import { OauthModule } from './oauth/oauth.module';
     CrudModule,
     BookmarkModule,
     PrismaModule,
-    ConfigModule.forRoot({ isGlobal: true }),
-    MessagesModule,
     OauthModule,
+    MessagesModule,
+    ConfigModule.forRoot({ isGlobal: true }),
   ]
 })
 export class AppModule { }

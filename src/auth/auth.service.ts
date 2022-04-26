@@ -10,8 +10,8 @@ export class AuthService {
   constructor(
     private prisma: PrismaService,
     private jwt: JwtService,
-    private congig: ConfigService
-  ) {}
+    private config: ConfigService
+  ) { }
   async signUp(dto: AuthDto) {
     try {
       const hash = await argon.hash(dto.password);
@@ -52,7 +52,7 @@ export class AuthService {
       sub: userId,
       email
     };
-    const secret = this.congig.get('JWT_SECRET');
+    const secret = this.config.get('JWT_SECRET');
     const scretToken = await this.jwt.signAsync(data, {
       expiresIn: '2h',
       secret: secret
