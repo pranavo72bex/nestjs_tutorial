@@ -6,12 +6,12 @@ import { ConfigService } from '@nestjs/config';
 config();
 
 @Injectable()
-export class GoogleStrategy extends PassportStrategy(Strategy, 'google-oauth') {
-    constructor(config: ConfigService) {
+export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
+    constructor() {
         super({
-            clientID: config.get('DATABASE_URL'),
-            clinetSecret: config.get('GOOGLE_SECRETE'),
-            callbackURL: config.get('callbackURL'),
+            clientID: "909583270134-i50lnk7ii2hq1q0pmgiuajjba4qjm1ok.apps.googleusercontent.com",
+            clinetSecret: "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",
+            callbackURL: 'http://localhost:3000/google/redirect',
             scope: ['email', 'profile']
         });
     }
@@ -32,4 +32,5 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google-oauth') {
         };
         done(null, user);
     }
+
 }
