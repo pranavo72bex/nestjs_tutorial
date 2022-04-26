@@ -17,7 +17,7 @@ import { Server, Socket } from 'socket.io';
 export class MessagesGateway {
   @WebSocketServer()
   server: Server;
-  constructor(private readonly messagesService: MessagesService) { }
+  constructor(private readonly messagesService: MessagesService) {}
 
   @SubscribeMessage('createMessage')
   async create(@MessageBody() createMessageDto: CreateMessageDto) {
@@ -43,6 +43,6 @@ export class MessagesGateway {
     @ConnectedSocket() client: Socket
   ) {
     const name = await this.messagesService.getClientName(client.id);
-    client.broadcast.emit('typing', { name, isTyping })
+    client.broadcast.emit('typing', { name, isTyping });
   }
 }

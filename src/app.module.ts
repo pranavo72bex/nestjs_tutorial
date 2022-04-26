@@ -6,6 +6,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { CrudModule } from './crud/crud.module';
 import { MessagesModule } from './messages/messages.module';
+import { OauthModule } from './oauth/oauth.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { MessagesModule } from './messages/messages.module';
     BookmarkModule,
     PrismaModule,
     ConfigModule.forRoot({ isGlobal: true }),
-    MessagesModule
+    MessagesModule,
+    OauthModule,
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -15,9 +15,7 @@ export class MessagesService {
     this.clientToUser[clientId];
     return Object.values(this.clientToUser);
   }
-  getClientName(clientId: string) {
-
-  }
+  getClientName(clientId: string) {}
   findAll() {
     return this.message;
   }
