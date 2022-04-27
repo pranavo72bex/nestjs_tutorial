@@ -6,7 +6,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { CrudModule } from './crud/crud.module';
 import { MessagesModule } from './messages/messages.module';
-import { OauthModule } from './oauth/oauth.module';
+import { OauthModule } from './google-oauth/oauth.module';
 
 @Module({
   imports: [
