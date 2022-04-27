@@ -6,7 +6,8 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { CrudModule } from './crud/crud.module';
 import { MessagesModule } from './messages/messages.module';
-import { OauthModule } from './google-oauth/oauth.module';
+import { GoogleOauthModule } from './google-oauth/oauth.module';
+import { facebookAuthModule } from './facebook-oauth/facebook.module';
 
 @Module({
   imports: [
@@ -15,8 +16,9 @@ import { OauthModule } from './google-oauth/oauth.module';
     CrudModule,
     BookmarkModule,
     PrismaModule,
-    OauthModule,
+    GoogleOauthModule,
     MessagesModule,
+    facebookAuthModule,
     ConfigModule.forRoot({ isGlobal: true }),
   ]
 })

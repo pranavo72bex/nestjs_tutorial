@@ -1,10 +1,10 @@
 import { Controller, Get, Req, UseGuards } from "@nestjs/common";
 import { AuthGuard } from '@nestjs/passport';
-import { OauthServices } from "./oauth.service";
+import { GoogleOauthServices } from "./oauth.service";
 
 @Controller('google')
-export class OauthController {
-    constructor(private readonly OauthServices: OauthServices) { }
+export class GoogleOauthController {
+    constructor(private readonly OauthServices: GoogleOauthServices) { }
 
     @Get()
     @UseGuards(AuthGuard('google'))
